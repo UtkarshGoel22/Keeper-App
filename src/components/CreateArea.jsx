@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 
 function CreateArea(props) {
     const [note, setNote] = useState({
-        title:"",
-        content:""
+        title: "",
+        content: ""
     });
 
     function handleChange(event) {
@@ -11,13 +11,17 @@ function CreateArea(props) {
         setNote(prevNote => {
             return {
                 ...prevNote,
-                [name] : value
+                [name]: value
             }
         })
     }
 
     function submitNote(event) {
         props.onAdd(note);
+        setNote({
+            title: "",
+            content: ""
+        });
         event.preventDefault();
     }
 
