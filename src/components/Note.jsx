@@ -1,6 +1,8 @@
 import React from 'react';
 
 function Note(props) {
+    // function to call the deleteNote function in App.jsx
+    // which was passed as a prop (onDelete). 
     function handleClick() {
         props.onDelete(props.id);
     }
